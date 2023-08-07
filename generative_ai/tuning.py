@@ -28,7 +28,7 @@ def tuning(
     project_id: str,
     location: str,
     training_data: pd.DataFrame | str,
-    train_steps: int = 10,
+    train_steps: int = 300,
 ) -> TextGenerationModel:
     """Tune a new model, based on a prompt-response data.
 
@@ -58,7 +58,7 @@ def tuning(
         # Optional:
         model_display_name="your_tuned_model",
         train_steps=train_steps,
-        tuning_job_location="europe-west4",  # Only supported in europe-west4 for Public Preview
+        tuning_job_location="europe-west4",
         tuned_model_location=location,
     )
 
