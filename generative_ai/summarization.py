@@ -75,4 +75,15 @@ Summary:
 
 
 if __name__ == "__main__":
-    text_summarization()
+
+    import configparser
+    config = configparser.ConfigParser()
+    config.read('H:\My Drive\config\gcloud-niit-projectInfo.txt')
+
+    project_id = config['global']['project_id']
+    temperature = config['global']['temperature']
+    location =  config['global']['location']
+    
+    print(project_id, temperature, location)
+
+    text_summarization(temperature, project_id, location)
